@@ -1,0 +1,11 @@
+<% provide :web_title, "所有公告" %>
+<div id="posts">
+	<%= render('posts') %>
+</div>
+
+
+<div id="postpaginate">
+	<%= paginate @posts, remote: true , theme: 'twitter-bootstrap-4'%>
+</div>
+
+

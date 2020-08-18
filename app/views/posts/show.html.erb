@@ -1,6 +1,6 @@
 <% provide :web_title, @post.title %>
 <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m" style="margin-bottom: 20px;">
-	<h3 id="posttitle"><%= @post['title'] %></h3>
+	<h2 id="posttitle"><%= @post['title'] %></h2>
 	<div id="postinfo">
 		<i class="fas fa-user fa-fw"></i><%= @post.user.try(:uname) %><br>
 		<i class="fas fa-calendar-alt fa-fw"></i><%=@post.created_at.strftime("%F %H:%M")%><br>

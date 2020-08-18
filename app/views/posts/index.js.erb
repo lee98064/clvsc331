@@ -1,0 +1,2 @@
+$('#posts').html('<%= j render 'posts' %>');
+$('#postpaginate').html("<%= escape_javascript(paginate(@posts, remote: true, theme: 'twitter-bootstrap-4')) %>");

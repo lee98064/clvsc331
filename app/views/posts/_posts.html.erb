@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+	<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m" style="margin-bottom: 20px;">
+		<div id="postinfo">
+			<h2><%= link_to post['title'] , post_path(post)%></h2>
+		</div>
+		<hr>
+		<div style="display: flex;">
+			<img src="<%= post.user.try(:uimg) %>" height="40px" width="40px" style="border-radius: 50%;margin-right: 10px;">
+			<span style="line-height: 19px;">
+				<%= post.user.try(:uname)[-3..-1] %><br>
+				<%= post.created_at.strftime("%F %H:%M") %>
+			</span>
+		</div>
+	</div>
+<% end %>
