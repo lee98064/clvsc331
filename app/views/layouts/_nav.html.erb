@@ -1,0 +1,21 @@
+<nav class="header">
+    <a href="" class="logo">會三一</a>
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="nav-icon"></span></label>
+    <ul class="menu">
+        <li><a href="/">首頁</a></li>
+        <% if user_signed_in?%>
+          <li><%= link_to "新增貼文", new_post_path %></li>
+          <li><%= link_to "登出", destroy_user_session_path, method: :DELETE, data:{confirm: "確定登出?"} %></li>
+        <% else %>
+          <li><%= link_to "登入", user_session_path %></li>
+        <% end %>
+    </ul>
+</nav>
+
+<% if alert %>
+  <%= render "layouts/alert" %>
+<% end %>
+<% if notice %>
+  <%= render "layouts/notice" %>
+<% end %>

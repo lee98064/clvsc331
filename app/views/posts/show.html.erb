@@ -1,0 +1,21 @@
+<% provide :web_title, @post.title %>
+<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m" style="margin-bottom: 20px;">
+	<h3 id="posttitle"><%= @post['title'] %></h3>
+	<div id="postinfo">
+		<i class="fas fa-user fa-fw"></i><%= @post.user.try(:uname) %><br>
+		<i class="fas fa-calendar-alt fa-fw"></i><%=@post.created_at.strftime("%F %H:%M")%><br>
+		<i class="fas fa-pen fa-fw"></i><%=@post.updated_at.strftime("%F %H:%M")%><br>
+	</div>
+	<div id="postcontent">
+		<p><%= raw(@post['content']) %></p>
+	</div>
+		
+	<hr>
+	<div id="postfunction">
+		<% if @post.user_id == current_user.id %>
+	  		<%= link_to '編輯', edit_post_path(@post), class: "nav-link" %>
+	   		<%= link_to '刪除貼文', post_path(@post), method: :delete, class: "nav-link", data: {confirm: "確定刪除?"} %>
+	   	<% end %>
+	  	<%= link_to '返回', posts_path, class: "nav-link" %>
+	</div>
+</div>

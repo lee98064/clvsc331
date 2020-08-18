@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>會三一班級公告</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'menu', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/27049cdd6d.js" crossorigin="anonymous"></script>
+    <%= tinymce_assets %>
+  </head>
+
+  <body>
+    <%= render "layouts/nav" %>
+    <div class="container" style="padding-top: 80px;">
+      <%= yield %>
+    </div>
+  </body>
+</html>
